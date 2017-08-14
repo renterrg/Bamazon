@@ -72,11 +72,3 @@ function buyItem () {
 			});	
 		});
 }
-
-
-
-
-
-
-
-

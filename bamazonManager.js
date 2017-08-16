@@ -108,12 +108,12 @@ function addProduct() {
 	inquirer
 		.prompt([
 			{	
-				name: "name",
+				name: "product_name",
 				type: "input",
 				message: "What is the name of the product you would like to add?"
 			},
 			{
-				name: "department",
+				name: "department_name",
 				type: "input",
 				message: "What is the name of the product's department?"
 			},
@@ -123,15 +123,15 @@ function addProduct() {
 				message: "What is the price of each unit?"
 			},
 			{
-				name: "stock",
+				name: "stock_quantity",
 				type: "input",
 				message: "How many units would you like to add?"
 			}
 		])
 		.then(function(answer){
-			var query = "INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES ?";
-			var values = [answer.name, answer.department, answer.price, answer.stock];
-				connection.query(query, [values], function (err, res){
+			var query = "INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES (?,?,?,?)";
+			var values = [answer.product_name, answer.department_name, parseInt(answer.price), parseInt(answer.stock_quantity)];
+					connection.query(query, values, function (err, res){
 					if (err) throw err;
 					console.log("1 record inserted, ID: " + res.insertId);
 				});

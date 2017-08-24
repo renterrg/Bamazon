@@ -60,15 +60,14 @@ function buyItem () {
 						var totalCost = results[i].price * answer.quantity;
 						connection.query("UPDATE products SET stock_quantity = ? WHERE id = ?", [stockQuantity, answer.item], function (error, results){
 							if (error) throw error;
-							console.log("Total cost: " + totalCost);
+							console.log("Total cost: " + (totalCost).toFixed(2));
 						});
 
 					} else {
 						console.log("Insufficient quantity!");
+						displayProducts();
 					}
 				}
-
-
 			});	
 		});
 }

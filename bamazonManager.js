@@ -135,7 +135,6 @@ function addProduct() {
 					if (err) throw err;
 					console.log("1 record inserted, ID: " + res.insertId);
 				});
-			
 		});
 }
 

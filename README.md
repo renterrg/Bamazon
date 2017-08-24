@@ -9,6 +9,6 @@ In addition to the "Customer View", there is a "Manager View" that presents the 
 	3. Add to Inventory
 	4. Add New Product
 
-	Each option interacts with the MySQL database. 
+Each option interacts with the MySQL database. 
 
 The tutorial video elaborating on the application can be found here, [Bamazon](https://youtu.be/50AaxNQx4tA).
